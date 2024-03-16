@@ -8,7 +8,7 @@ import torch
 from PIL import Image
 from fastai.vision.all import *
 
-VERSION = '1.0'
+VERSION = '1.1'
 
 if platform.system() == 'Windows':
     # fastai load_learner uses PosixPath, use a trick to load the model
