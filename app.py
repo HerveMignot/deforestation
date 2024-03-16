@@ -8,6 +8,8 @@ import torch
 from PIL import Image
 from fastai.vision.all import *
 
+VERSION = '1.0'
+
 if platform.system() == 'Windows':
     # fastai load_learner uses PosixPath, use a trick to load the model
     _saved_hack = pathlib.PosixPath
@@ -49,6 +51,7 @@ def analyze_image(image):
     
 
 st.write("## Palm Tree Dectector")
+st.write(f'Version {VERSION}')
 
 with st.sidebar:
     image_file = st.file_uploader('Choose an image',
