@@ -33,7 +33,8 @@ def classify_image(image) -> bool:
     - bool: True if image contains palm trees
     """
     tensor = torch.tensor(np.asarray(Image.open(image).convert('RGB').resize((256, 256))))
-    results = classification_model.predict(tensor)
+    with torch.no_grad():
+        results = classification_model.predict(tensor)
     return results[0] == '1'
     # return random.choice([True, False])
     
